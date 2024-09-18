@@ -17,3 +17,10 @@ This repository:
 | TaskManagement  | A Dockerize Django + React + MongoDB project. |
 
 
+## Reference
+
+Django Tutorial: https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&ab_channel=CoreySchafer
+Code: 
+
+React + Django Tutorial: https://www.youtube.com/watch?v=JD-age0BPVo&list=PLzMcBGfZo4-kCLWnGmK0jUBmGLaJxvi4j&ab_channel=TechWithTim
+Code: https://github.com/techwithtim/Music-Controller-Web-App-Tutorial
