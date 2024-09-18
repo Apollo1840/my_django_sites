@@ -1,0 +1,36 @@
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] MongoDB starting : pid=7338 port=27017 dbpath=/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs2/mongo_data 64-bit host=zcymbk
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] db version v3.6.3
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] git version: 9586e557d54ef70f9ca4b43c26892cd55257e1a5
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] modules: none
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] build environment:
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2024-09-18T17:49:26.932+0200 I CONTROL  [initandlisten] options: { net: { bindIp: "127.0.0.1", port: 27017 }, processManagement: { fork: true }, storage: { dbPath: "/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs2/mongo_data" }, systemLog: { destination: "file", path: "/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs2/mongo_data/mongodb.log" } }
+2024-09-18T17:49:26.932+0200 I -        [initandlisten] Detected data files in /home/congyu/congyu_program/react/my_django_sites/CommunityBlogs2/mongo_data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2024-09-18T17:49:26.932+0200 I STORAGE  [initandlisten] 
+2024-09-18T17:49:26.932+0200 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2024-09-18T17:49:26.932+0200 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2024-09-18T17:49:26.932+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7362M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2024-09-18T17:49:27.392+0200 I STORAGE  [initandlisten] WiredTiger message [1726674567:392123][7338:0x7fa412c4e0c0], txn-recover: Main recovery loop: starting at 2/5504
+2024-09-18T17:49:27.448+0200 I STORAGE  [initandlisten] WiredTiger message [1726674567:448886][7338:0x7fa412c4e0c0], txn-recover: Recovering log 2 through 3
+2024-09-18T17:49:27.486+0200 I STORAGE  [initandlisten] WiredTiger message [1726674567:486743][7338:0x7fa412c4e0c0], txn-recover: Recovering log 3 through 3
+2024-09-18T17:49:27.553+0200 I CONTROL  [initandlisten] 
+2024-09-18T17:49:27.553+0200 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2024-09-18T17:49:27.553+0200 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2024-09-18T17:49:27.553+0200 I CONTROL  [initandlisten] 
+2024-09-18T17:49:27.559+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs2/mongo_data/diagnostic.data'
+2024-09-18T17:49:27.560+0200 I NETWORK  [initandlisten] waiting for connections on port 27017
+2024-09-18T17:49:36.946+0200 I NETWORK  [listener] connection accepted from 127.0.0.1:57014 #1 (1 connection now open)
+2024-09-18T17:49:36.946+0200 I NETWORK  [conn1] received client metadata from 127.0.0.1:57014 conn: { driver: { name: "PyMongo", version: "4.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "5.10.0-051000-generic" }, platform: "CPython 3.12.5.final.0" }
+2024-09-18T17:49:36.947+0200 I NETWORK  [listener] connection accepted from 127.0.0.1:57016 #2 (2 connections now open)
+2024-09-18T17:49:36.947+0200 I NETWORK  [conn2] received client metadata from 127.0.0.1:57016 conn: { driver: { name: "PyMongo", version: "4.8.0" }, os: { type: "Linux", name: "Linux", architecture: "x86_64", version: "5.10.0-051000-generic" }, platform: "CPython 3.12.5.final.0" }
+2024-09-18T17:49:36.947+0200 I COMMAND  [conn2] terminating, shutdown command received
+2024-09-18T17:49:36.947+0200 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2024-09-18T17:49:36.947+0200 I NETWORK  [conn2] removing socket file: /tmp/mongodb-27017.sock
+2024-09-18T17:49:36.947+0200 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2024-09-18T17:49:36.948+0200 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2024-09-18T17:49:37.037+0200 I STORAGE  [conn2] shutdown: removing fs lock...
+2024-09-18T17:49:37.037+0200 I CONTROL  [conn2] now exiting
+2024-09-18T17:49:37.037+0200 I CONTROL  [conn2] shutting down with code:0

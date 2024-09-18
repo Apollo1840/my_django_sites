@@ -15,17 +15,17 @@ user = User.objects.first()
 posts_data = [
     {
         "author": user,
-        "title": "Travel Diary",
+        "title": "Travel Diary 2",
         "content": "Exploring Europe",
     },
     {
         "author": user,
-        "title": "Tech Thoughts",
+        "title": "Tech Thoughts 2",
         "content": "Introduction to AI",
     },
     {
         "author": user,
-        "title": "Recipe Corner",
+        "title": "Recipe Corner 2",
         "content": "Delicious Vegan Dishes",
     }
 ]
