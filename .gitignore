@@ -58,6 +58,7 @@ dist/
 *.map
 
 # MongoDB data
+**/mongo_data/**
 data/
 *.lock
 
