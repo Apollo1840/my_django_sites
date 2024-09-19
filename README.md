@@ -12,9 +12,15 @@ This repository:
 | django_init   | A hello world app without utility. |
 | CommunityBlogs   | A basic django project with User system & Blog system.  |
 | CommunityBlogs2    | **(Django + MongoDB)** BlogCommunity with mongoDB as database. |
-| HousePart  | **(Django + React)** A basic django project with React as the frontend. |
+| HousePart  | **(Django + React)** A basic django project with React components. |
 | TaskManagement  | **(Django + React + MongoDB)** A simple project. |
 | TaskManagementD  | Dockerize TaskManagement. |
+
+## Technologies
+
+There are two ways to incorporate Django and React:
+- (Django / React) Frontend fully supported by React, Django serve as Data API.
+- (Django + React) Framework of the Frontend supported by Django. Frontend has some React components.
 
 
 ## Reference
