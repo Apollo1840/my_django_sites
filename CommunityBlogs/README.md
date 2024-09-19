@@ -7,7 +7,7 @@
 
 ```bash
   
-    # create venv
+    # create venv (if needed)
     conda create --name web python=3 -y
     conda activate web
     
