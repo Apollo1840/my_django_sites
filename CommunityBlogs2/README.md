@@ -15,6 +15,7 @@
     pip3 install -r requirements.txt
     
     # prepare django app
+    python start_mongo.py
     python manage.py makemigrations
     python manage.py migrate
     python manage.py createsuperuser
@@ -28,3 +29,14 @@
 ```bash
     python manage.py runserver
 ```
+
+
+## Appendix
+
+Check out mongodb is running or not:
+
+```bash
+  ps aux | grep mongod
+```
+
+If 27017 is taken, it means mongodb is running.
