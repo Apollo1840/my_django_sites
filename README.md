@@ -22,6 +22,12 @@ There are two ways to incorporate Django and React:
 - (Django / React) Frontend fully supported by React, Django serve as Data API.
 - (Django + React) Framework of the Frontend supported by Django. Frontend has some React components.
 
+### Django + React
+
+A typical approach is: 
+Use **Webpack** to bundle all **React** components to `./static` (in detail, into the `./static/frontend/main.js`), 
+and use **Django** to host a `index.html` which imports the `./static` (obviously, import `./static/frontend/main.js`).
+
 
 ## Reference
 

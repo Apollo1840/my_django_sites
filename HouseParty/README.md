@@ -3,8 +3,8 @@
 This is a Django + React project.
 
 ## project tech
-Use webpack to bundle all React components to `./static` (in detail, into the `./static/frontend/main.js`), 
-and use django to host a `index.html` which imports the `./static` (obviously, import `./static/frontend/main.js`).
+Use **Webpack** to bundle all **React** components to `./static` (in detail, into the `./static/frontend/main.js`), 
+and use **Django** to host a `index.html` which imports the `./static` (obviously, import `./static/frontend/main.js`).
 
 ## project init
 
