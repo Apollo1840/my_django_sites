@@ -28,6 +28,8 @@ A typical approach is:
 Use **Webpack** to bundle all **React** components to `./static` (in detail, into the `./static/frontend/main.js`), 
 and use **Django** to host a `index.html` which imports the `./static` (obviously, import `./static/frontend/main.js`).
 
+(Comment: code structure wise they(Django and React) are very nested, 
+files mixed together under same app folder and hard to distinguish which part serves Django and which part serves React) 
 
 ## Reference
 
