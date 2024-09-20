@@ -18,14 +18,10 @@ P
  CommunityBlogs2/requirements.txt,1/0/10a8140ea05de3e933e6c4be5bdb2bc402ac2fca
 W
 'HouseParty/music_controller/api/apps.py,7/b/7bf86e5ba3be5f59aadb63f925fbd5a652bfb7ca
-L
-CommunityBlogs/blog/views.py,c/a/ca2826e7e5e2b61f0fc63cfdd4ef181c03fdd101
 Z
 *CommunityBlogs2/django_project/settings.py,7/3/735d2a144d913654a822a478e187a7fa9d899fcf
 V
 &CommunityBlogs2/django_project/urls.py,a/a/aa81e791275809c987ffff17fac9b66264341a29
-K
-CommunityBlogs/blog/urls.py,8/5/850d65c55a88c9cb7276d799aa192a4b02a1acb1
 Y
 )HouseParty/music_controller/api/models.py,8/5/8561457c5499c350ea39461940d1428f3782efc8
 ^
@@ -56,8 +52,6 @@ i
 -HouseParty/music_controller/frontend/views.py,d/d/dd6c00b9ec3a23c5c6f822e322af4f9e78167c10
 r
 BHouseParty/music_controller/frontend/templates/frontend/index.html,1/9/19a662ab12c29096330ddc6d6b635b46c83ebc6e
-H
-CommunityBlogs/README.md,8/1/81effac9c74a30e2de74267b58a58aa19cb8a1c2
 D
 HouseParty/README.md,7/5/75773716749ea3df4f986717c27d2a49a38c950a
 _
