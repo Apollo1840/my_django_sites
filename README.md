@@ -36,7 +36,7 @@ files mixed together under same app folder and hard to distinguish which part se
 ---
 
 Django Tutorial: https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&ab_channel=CoreySchafer
-Code: 
+Code: https://github.com/CoreyMSchafer/code_snippets/tree/master/Django_Blog
 
 ---
 

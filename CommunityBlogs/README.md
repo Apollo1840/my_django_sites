@@ -64,3 +64,4 @@ render a HTML, and we control the HTML using Django Template Language(DTL), i.e.
 
 The benefits of Django is that it contains useful pre-implemented views (eg. admin.site.urls), 
 pre-implemented components(eg. UserCreationForm), and easy to implement data models (using `django.db.models.xxxField`)
+And it handles some typical data based interactions for you (eg. user registration/login)
