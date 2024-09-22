@@ -26,6 +26,11 @@
 ## Run the app
 
 ```bash
+    
+    # (optional) Setup your App Server Email, see details in follow section
+    export EMAIL_USER='your-email@gmail.com'
+    export EMAIL_PASS='your-email-password'
+    
     python manage.py runserver
 ```
 
@@ -65,3 +70,5 @@ render a HTML, and we control the HTML using Django Template Language(DTL), i.e.
 The benefits of Django is that it contains useful pre-implemented views (eg. admin.site.urls), 
 pre-implemented components(eg. UserCreationForm), and easy to implement data models (using `django.db.models.xxxField`)
 And it handles some typical data based interactions for you (eg. user registration/login)
+
+### App Server Email
