@@ -72,3 +72,7 @@ pre-implemented components(eg. UserCreationForm), and easy to implement data mod
 And it handles some typical data based interactions for you (eg. user registration/login)
 
 ### App Server Email
+
+1.create a google account.
+2.set the permission of gmail to python app (Google App Passwords).
+3.embed the username and password into environment variable
