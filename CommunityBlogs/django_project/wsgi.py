@@ -8,9 +8,13 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
 
 application = get_wsgi_application()
+
+sys.path.append('/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs')
+sys.path.append('/home/congyu/congyu_program/react/my_django_sites/CommunityBlogs/django_project')
