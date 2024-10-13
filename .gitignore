@@ -26,8 +26,8 @@ build/
 *.pyc
 *.mo
 *.swp
-db.sqlite3
-media
+# db.sqlite3
+**/secrets.json
 staticfiles/
 local_settings.py
 

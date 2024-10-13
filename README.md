@@ -31,6 +31,13 @@ and use **Django** to host a `index.html` which imports the `./static` (obviousl
 (Comment: code structure wise they(Django and React) are very nested, 
 files mixed together under same app folder and hard to distinguish which part serves Django and which part serves React) 
 
+## Deploy on a remote Linux server
+
+1. (optional) set up password-free ssh.
+2. clone code.
+3. initialize virtual environment.
+
+
 ## Reference
 
 ---
