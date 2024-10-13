@@ -15,7 +15,7 @@ with open("posts.json") as f:
 # Insert posts into the database
 for post_data in posts_json:
     post = Post(
-        author=post_data["author"],
+        author_id=post_data["author_id"],
         title=post_data["title"],
         content=post_data["content"],
     )
