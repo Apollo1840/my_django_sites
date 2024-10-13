@@ -13,11 +13,12 @@ import os
 from pathlib import Path
 import json
 
-with open("secrets.json") as f:
-    secrets = json.load(f)
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+with open(os.path.join(BASE_DIR, "secrets.json")) as f:
+    secrets = json.load(f)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -26,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secrets["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["172.105.92.175"]
+ALLOWED_HOSTS = ["localhost", "172.105.92.175"]
 
 # Application definition
 
