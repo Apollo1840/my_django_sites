@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     PostListView,
     PostDetailView,
@@ -17,4 +17,5 @@ urlpatterns = [
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('about', views.about, name="blog-about"),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
