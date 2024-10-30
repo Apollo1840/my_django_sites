@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
@@ -8,7 +8,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post, User
+from .models import Post, User, Comment
+from .forms import CommentForm
 
 """
 def home(request):
@@ -40,7 +41,28 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
+
     # context_object_name = 'object'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        context['comments'] = post.comments.all()
+        if self.request.user.is_authenticated:
+            context['form'] = CommentForm()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                post = self.get_object()
+                comment = form.save(commit=False)
+                comment.post = post
+                comment.author = request.user
+                comment.save()
+                return redirect('post-detail', pk=post.pk)
+        return self.get(request, *args, **kwargs)
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
