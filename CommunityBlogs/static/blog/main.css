@@ -95,3 +95,36 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+.comment {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.comment-author-img {
+  flex: 0 0 60px;
+}
+
+.comment-author-img img {
+  width: 60px;
+  height: 60px;
+}
+
+.comment-body {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.comment-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.comments-section {
+  border-top: 2px solid #e6e6e6;
+  padding-top: 15px;
+}
+
+.comments-list .comment {
+  margin-bottom: 15px;
+}
