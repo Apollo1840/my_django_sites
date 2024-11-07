@@ -1,0 +1,84 @@
+<!-- chatapp/templates/chatapp/chat.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat User {{ user_id }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            max-width: 60%;
+            word-wrap: break-word;
+            clear: both;
+        }
+        .sent {
+            background-color: #dcf8c6;
+            float: right;
+            text-align: right;
+        }
+        .received {
+            background-color: #f1f0f0;
+            float: left;
+            text-align: left;
+        }
+        .input-container {
+            display: flex;
+        }
+        .input-container input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #45a049;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat User {{ user_id }}</h1>
+    <div class="chat-container">
+        {% for message in messages %}
+            <div class="message {% if message.sender == user_id %}sent{% else %}received{% endif %}">
+                <p>{{ message.text }}</p>
+                <div class="timestamp">{{ message.timestamp|date:"Y-m-d H:i" }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="input-container">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="message" placeholder="Type your message here..." autofocus/>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
