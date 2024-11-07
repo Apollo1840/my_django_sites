@@ -91,13 +91,22 @@
 
         function getMessages() {
             fetch('/fetch_messages/')
-            .then(response => response.json())
-            .then(data => {
+                .then(response => response.json())
+                .then(data => {
                 var chatBox = document.getElementById('chat-box');
                 chatBox.innerHTML = '';
                 data.forEach(function(msg) {
                     var messageDiv = document.createElement('div');
-                    messageDiv.className = 'message ' + (msg.sender == userId ? 'sent' : 'received');
+
+                // Check sender conditions with debug logging
+                if (msg.sender == userId) {
+                    messageDiv.className = 'message sent';
+                } else if (msg.sender == 0 && msg.receiver == userId) {
+                    messageDiv.className = 'message received';
+                } else {
+                    return;
+                }
+
                     var contentP = document.createElement('p');
                     contentP.textContent = msg.content;
                     messageDiv.appendChild(contentP);
@@ -122,16 +131,16 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <div class="chat-header">Chat User {{ user_id }}</div>
-        <div id="chat-box"></div>
-        <div id="input-box">
-            <form method="post">
-                {% csrf_token %}
-                <input type="text" name="content" placeholder="Type your message here..." autocomplete="off" required>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+<div class="container">
+    <div class="chat-header">Chat User {{ user_id }}</div>
+    <div id="chat-box"></div>
+    <div id="input-box">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="Type your message here..." autocomplete="off" required>
+            <button type="submit">Send</button>
+        </form>
     </div>
+</div>
 </body>
 </html>
