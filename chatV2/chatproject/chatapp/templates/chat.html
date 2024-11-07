@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat User {{ user_id }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-box {
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            max-width: 60%;
+            word-wrap: break-word;
+            clear: both;
+        }
+        .sent {
+            background-color: #dcf8c6;
+            float: right;
+            text-align: right;
+        }
+        .received {
+            background-color: #f1f0f0;
+            float: left;
+            text-align: left;
+        }
+        #input-box {
+            display: flex;
+            margin-top: 10px;
+        }
+        #input-box input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        #input-box button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        #input-box button:hover {
+            background-color: #45a049;
+        }
+        .timestamp {
+            font-size: 0.8em;
+            color: gray;
+        }
+    </style>
+    <script>
+        var userId = {{ user_id }};
+
+        function getMessages() {
+            fetch('/fetch_messages/')
+            .then(response => response.json())
+            .then(data => {
+                var chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = '';
+                data.forEach(function(msg) {
+                    var messageDiv = document.createElement('div');
+                    messageDiv.className = 'message ' + (msg.sender == userId ? 'sent' : 'received');
+
+                    var contentP = document.createElement('p');
+                    contentP.textContent = msg.content;
+                    messageDiv.appendChild(contentP);
+
+                    if (msg.timestamp) {
+                        var timestampDiv = document.createElement('div');
+                        timestampDiv.className = 'timestamp';
+                        timestampDiv.textContent = msg.timestamp;
+                        messageDiv.appendChild(timestampDiv);
+                    }
+
+                    chatBox.appendChild(messageDiv);
+                });
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+
+        setInterval(getMessages, 1000);
+
+        window.onload = function() {
+            getMessages();
+        }
+    </script>
+</head>
+<body>
+    <h1>Chat User {{ user_id }}</h1>
+    <div id="chat-box"></div>
+    <div id="input-box">
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="content" placeholder="Type your message here..." autocomplete="off" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
