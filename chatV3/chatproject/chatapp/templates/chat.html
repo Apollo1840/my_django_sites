@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat User {{ user_id }}</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        .chat-header {
+            padding: 1em;
+            font-size: 1.2em;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+        #chat-box {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        .sent {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .received {
+            background-color: #f1f0f0;
+            align-self: flex-start;
+            text-align: left;
+        }
+        .timestamp {
+            font-size: 0.75em;
+            color: gray;
+            text-align: right;
+        }
+        #input-box {
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            border-top: 1px solid #ccc;
+            position: sticky;
+            bottom: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        #input-box input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+            margin-right: 10px;
+        }
+        #input-box button {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var userId = {{ user_id }};
+
+        function getMessages() {
+            fetch('/fetch_messages/')
+            .then(response => response.json())
+            .then(data => {
+                var chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = '';
+                data.forEach(function(msg) {
+                    var messageDiv = document.createElement('div');
+                    messageDiv.className = 'message ' + (msg.sender == userId ? 'sent' : 'received');
+                    var contentP = document.createElement('p');
+                    contentP.textContent = msg.content;
+                    messageDiv.appendChild(contentP);
+
+                    if (msg.timestamp) {
+                        var timestampDiv = document.createElement('div');
+                        timestampDiv.className = 'timestamp';
+                        timestampDiv.textContent = msg.timestamp;
+                        messageDiv.appendChild(timestampDiv);
+                    }
+                    chatBox.appendChild(messageDiv);
+                });
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+        }
+
+        setInterval(getMessages, 1000);
+
+        window.onload = function() {
+            getMessages();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-header">Chat User {{ user_id }}</div>
+        <div id="chat-box"></div>
+        <div id="input-box">
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="content" placeholder="Type your message here..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
