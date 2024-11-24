@@ -29,7 +29,7 @@ SECRET_KEY = secrets["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "172.105.92.175"]
+ALLOWED_HOSTS = ["localhost", "172.105.92.175", "www.openelab.org"]
 
 # Application definition
 
