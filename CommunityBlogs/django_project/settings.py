@@ -138,18 +138,19 @@ CKEDITOR_CONFIGS = {
             {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat', 'CodeSnippet']},
             {'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
             {'name': 'links', 'items': ['Link', 'Unlink']},
-            {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar']},
+            {'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'Embed', 'Iframe']},  # Added Embed and Iframe
             {'name': 'styles', 'items': ['Styles', 'Format']},
             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
             {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
         ],
         'height': 300,
         'width': 'auto',
-        'extraPlugins': 'codesnippet',
-        'codeSnippet_theme': 'default',  # You can choose other themes
+        'extraPlugins': 'codesnippet,embed,autoembed,iframe',  # Added embed, autoembed, iframe plugins
+        'codeSnippet_theme': 'default',  # Keep your theme for code snippets
         'skin': 'moono-lisa',
     },
 }
+
 
 CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_BASEPATH = 'https://cdn.ckeditor.com/4.16.2/full-all/'

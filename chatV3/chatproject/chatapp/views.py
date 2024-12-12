@@ -3,8 +3,15 @@
 from django.shortcuts import render, redirect
 from .models import Message
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 
+# from langchain.llms import OpenAI
+# from langchain.memory import ConversationBufferMemory
+# from langchain.chains import ConversationChain
+# from langchain.memory import ConversationSummaryBufferMemory
+
+
+# llm = OpenAI()
+# memory = ConversationSummaryBufferMemory(llm=llm, max_token_limit=100)
 
 def chat_view(request, user_id):
     if request.method == 'POST':
@@ -15,9 +22,9 @@ def chat_view(request, user_id):
             content=content
         )
 
-        # genai.configure(api_key=GENERATIVE_AI_KEY)
-        # model = genai.GenerativeModel("gemini-pro")
-        # bot_response = model.generate_content(user_message)
+        # conversation = ConversationChain(llm=llm, memory=memory)
+        # output = conversation.predict(input=user_input)
+        # memory.save_context({"input": user_input}, {"output": output})
         bot_response = content.split(" ")[-1]
 
         Message.objects.create(sender=0, receiver=2 if user_id == 1 else 1, content=bot_response)
